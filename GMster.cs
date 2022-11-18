@@ -9,6 +9,8 @@ public class GMster : MonoBehaviour
     GameObject car;
     GameObject flag;
     GameObject distance;
+    float  point = 100f;
+    float poi = 0f;
     void Start()
     {
         this.car = GameObject.Find("car");
@@ -21,6 +23,19 @@ public class GMster : MonoBehaviour
     void Update()
     {
         float length = this.flag.transform.position.x - this.car.transform.position.x;
-        this.distance.GetComponent<Text>().text = "距離目標還有:" + length.ToString("F2") + "m";
+        if (length < 16f)
+        {
+            
+            poi = point / length;
+
+        }
+        if (this.flag.transform.position.x<this.car.transform.position.x)
+        {
+            poi = 0;
+        }
+
+        this.distance.GetComponent<Text>().text = "距離目標還有:" + length.ToString("F2") + "m"+"分數"+poi.ToString("F2");;
+        
     }
+
 }
