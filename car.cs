@@ -24,6 +24,7 @@ public class car : MonoBehaviour
             Vector2 endPos = Input.mousePosition;//將放開滑鼠時的座標紀錄起來
             float swipeLength = endPos.x - starPos.x;
             myspeed = swipeLength / 500.0f;//把滑鼠滑動長度傳換成初始移動速度
+            GetComponent<AudioSource>().Play();
         }
         transform.Translate(myspeed, 0, 0);
         myspeed *= 0.98f;
