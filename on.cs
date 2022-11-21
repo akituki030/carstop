@@ -20,4 +20,12 @@ public class on : MonoBehaviour
     {
         SceneManager.LoadScene("carstop");
     }
+    public void gameplay()
+    {
+        SceneManager.LoadScene("Gameplay");
+    }
+    public void back() 
+    {
+        SceneManager.LoadScene("start");
+    }
 }
